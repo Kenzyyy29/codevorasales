@@ -10,7 +10,7 @@ import {
 } from "firebase/firestore";
 import {app} from "@/lib/firebase/config";
 import bcrypt from "bcryptjs";
-import { User } from "../types/user";
+import {User} from "../types/user";
 
 const firestore = getFirestore(app);
 
@@ -67,7 +67,8 @@ export async function register(data: {
     statusCode: 200,
     message: "User registered successfully",
    };
-  } catch (error) {
+  } catch (error: unknown) {
+   console.error("Registration error:", error); // Added error logging
    return {status: false, statusCode: 500, message: "Something went wrong"};
   }
  }

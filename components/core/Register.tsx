@@ -11,7 +11,6 @@ import {
  FiAlertCircle,
 } from "react-icons/fi";
 import Link from "next/link";
-import {register} from "@/lib/auth/auth-service";
 
 export default function Register() {
  const [formData, setFormData] = useState({
@@ -50,8 +49,9 @@ export default function Register() {
    } else {
     setError(data.message);
    }
-  } catch (err) {
+  } catch (err: unknown) {
    setError("Failed to connect to server");
+   console.error("Registration error:", err); // Added error logging
   } finally {
    setIsLoading(false);
   }

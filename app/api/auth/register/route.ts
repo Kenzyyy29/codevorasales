@@ -78,13 +78,14 @@ export async function POST(request: Request) {
     {status: result.statusCode || 400}
    );
   }
- } catch (error: any) {
+ } catch (error: unknown) {
   console.error("Registration error:", error);
+  const errorMessage = error instanceof Error ? error.message : "Unknown error";
   return NextResponse.json<ErrorResponse>(
    {
     status: false,
     message: "Internal server error",
-    error: error.message,
+    error: errorMessage,
     statusCode: 500,
    },
    {status: 500}

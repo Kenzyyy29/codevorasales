@@ -33,17 +33,6 @@ export default function Login() {
   }
  };
 
- const socialLogin = async (provider: "google" | "github") => {
-  setIsLoading(true);
-  setError("");
-  const result = await signIn(provider, {redirect: false});
-  setIsLoading(false);
-
-  if (result?.error) {
-   setError(result.error);
-  }
- };
-
  return (
   <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
    <motion.div
@@ -173,7 +162,7 @@ export default function Login() {
       </form>
 
       <div className="mt-6 text-center text-sm text-gray-600">
-       Don't have an account?{" "}
+       Don&apos;t have an account?{" "}
        <Link
         href="/auth/register"
         className="font-medium text-indigo-600 hover:text-indigo-500">
