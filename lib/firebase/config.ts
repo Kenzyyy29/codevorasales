@@ -5,12 +5,12 @@ import {initializeApp} from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
- apiKey: "AIzaSyA0UeBEJ3bUc1CnnEiTrN8b38shJQFuyf4",
- authDomain: "sellaris-cc760.firebaseapp.com",
- projectId: "sellaris-cc760",
- storageBucket: "sellaris-cc760.firebasestorage.app",
- messagingSenderId: "1064572739523",
- appId: "1:1064572739523:web:f8c764685c393fe5a52776",
+ apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+ authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+ projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+ storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+ messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+ appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
